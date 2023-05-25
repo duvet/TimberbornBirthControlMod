@@ -5,6 +5,9 @@
     <TargetFramework>netstandard2.1</TargetFramework>
     <PackageId>Duvet.Timberborn.BirthControl</PackageId>
     <AssemblyName>Duvet.Timberborn.BirthControl</AssemblyName>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
+    <FileVersion>1.0.1.0</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -17,7 +20,7 @@
 
   <ItemGroup>
     <PackageReference Include="BepInEx.BaseLib" Version="5.4.21" />
-    <PackageReference Include="TimberApi" Version="0.5.3.2" />
+    <PackageReference Include="TimberApi" Version="0.5.5.3" />
   </ItemGroup>
 
   <ItemGroup>

@@ -3,11 +3,13 @@ Imports Timberborn.EntityPanelSystem
 Imports UnityEngine.UIElements
 Imports UnityEngine
 Imports Timberborn.CoreUI
+Imports Timberborn.BaseComponentSystem
 
 ''' <summary>
 ''' 繁育罐的 UI 类
 ''' </summary>
 Public Class BreedingPodFragment : Implements IEntityPanelFragment
+
     Private ReadOnly _builder As UIBuilder
     Private _root As VisualElement
     ' 持有 UI 开关实例来设置状态
@@ -19,9 +21,9 @@ Public Class BreedingPodFragment : Implements IEntityPanelFragment
         _builder = builder
     End Sub
 
-    Public Sub ShowFragment(entity As GameObject) Implements IEntityPanelFragment.ShowFragment
+    Public Sub ShowFragment(entity As BaseComponent) Implements IEntityPanelFragment.ShowFragment
         ' 如果当前 UI 是繁育罐的，GetComponent() 会返回一个 BirthControlService 对象，否则返回 Nothing
-        _component = entity.GetComponent(Of BirthControlService)
+        _component = entity.GetComponentFast(Of BirthControlService)
     End Sub
 
     Public Sub ClearFragment() Implements IEntityPanelFragment.ClearFragment
